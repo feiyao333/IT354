@@ -1,18 +1,72 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
 		<title>IT 354 Assign1</title>
+		<style>
+			p.fontChange{
+				font-family: 'Dancing Script', cursive;
+				font-size:20px;
+			}
+			p.colorChange{
+				color:#77B4B1;
+				background-color:#272731;
+				border-color:#1E1813;
+				font-size:25px;
+			}
+		</style>
 	</head>
 	
 	<body>
-		<h1>IT 354 Assign1</h1>
+		<header>
+			<div id="topHeaderRow" >
+				<div class="container">
+				<nav class="navbar navbar-inverse" role="navigation">
+					<div class ="navbar-header">
+						<p class="navbar-text">Welcome to <strong>IT 354 Assign1</strong></p>
+					</div>
+				</nav>
+				</div>
+			</div>   <!-- end topHeaderRow -->
+		   
+		   <div id="logoRow" >
+			   <div class="container">
+				   <div class="row">
+					   <div class="col-md-8">
+							<h1>IT 354 Assign1</h1> 
+					   </div>
+
+					   <div class="col-md-4">
+							<form class="form-inline" role="search" >
+								<div class="input-group">
+									<label class="sr-only" for="search">Search</label>
+									<input type="text" class="form-control" placeholder="Search" name="search">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+									</span>
+								</div>
+							</form> 
+						</div>
+					</div>
+				</div>    
+			</div> 
+		</header>
+		
+		<div class="container">
 			<h2>Name</h2>
 				<p>Kunwei Tao</p>
 			<h2>Semester/Class</h2>
 				<p>This is the third semester for my graduation study in ISU. My major is Information systems and the sequence is Internet application development.</p>
 			<h2>the purpose of this website</h2>
 				<p>try and test what I learn from the class</p>
-			<h2></h2>
-
+			<h2>The font pairing you employ (you need more than one font)</h2>
+				<p class="fontChange">different font. I searching for it on the <a href="https://fonts.google.com/?selection.family=Dancing+Script">google fonts website.</a></p>
+			<h2>The color scheme you employ</h2>
+				<p class="colorChange">color change. using the color in Pokemon Gold and Silver on the http://colormind.io/.</p>
+			<h2>responsive to multiple pages (think bootstrap or similar strategies you can use)</h2>
+				<p>This page uses the bootstrap-3 to make the framework.</p>
+			<h2>On subsequent pages give a tutorial (written over)</h2>
+				<a href="">The first class tutorial</a>
+		</div>
 	</body>
 </html>
