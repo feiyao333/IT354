@@ -77,6 +77,53 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
+							<p>1.name functions</p>
+						</div>
+						<div class="col-md-6">
+							<pre>function add (a,b){ return a+b}</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>2.functions expression</p>
+						</div>
+						<div class="col-md-6">
+							<pre>const add = function (a,b){ return a+b}</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>3. arrow function</p>
+						</div>
+						<div class="col-md-6">
+							<pre>const add = (a, b) => { return a+b}</pre>
+						</div>
+					</div>
+					
+					<div class="row">
+						<p>note: <strong>const</strong> is the key word. Because we do not want to change the function.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "main">
+			<p>II. In the function, we also need to know the four kinds of function.</p>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
 							<p>1.Scope</p>
 							<pre>
 let myNumber = 10;
@@ -97,6 +144,10 @@ const addStuff = function (a){
 								document.write(addStuff(1))
 							</script>
 						</div>
+					</div>
+
+					<div class="row">
+						<p>note: scope improves the security. The outter side of scope cannnot know what happened inside.</p>
 					</div>
 				</div>
 			</div>
@@ -132,6 +183,10 @@ add(23);
 							</script>
 						</div>
 					</div>
+
+					<div class="row">
+						<p>note: nested scope looks complex. we can think one scope with another scope. In this case the outer scope cannot use the inner scope.</p>
+					</div>
 				</div>
 			</div>
 
@@ -142,14 +197,13 @@ add(23);
 							<p>3.Optional argument</p>
 							<p>omit other argument but the default value</p>
 							<pre>
-function dosome (a=100, b){
+function dosome (a, b=10){
 	return a + b;
 }
 								  
 dosome(2,3);
-dosome(,2);
+dosome(2,);
 dosome(2);
-dosome(1,2,3);
 							</pre>
 						</div>
 						<div class="col-md-6">
@@ -157,9 +211,14 @@ dosome(1,2,3);
 								function dosome (a=100, b){
 									return a + b;
 									}
-								document.write(dosome(2,3))																						
+								document.write(dosome(2,3)+","+dosome(2,)+","+dosome(2))																				
 							</script>
 						</div>
+					</div>
+
+					<div class="row">
+						<p>note: optional argument helps to define the default value for missing parameter.</p>
+						<p>dosome(2,) works in nodejs. However, it does not work in script</p>
 					</div>
 				</div>
 			</div>
@@ -168,7 +227,7 @@ dosome(1,2,3);
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<p>Rest parameters</p>
+							<p>4.Rest parameters</p>
 							<p>when we use '...something' in a parameter it gets bound to an array meaning: we get a list and can iterate over it.
 								we think of this as having unlimited arguments.</p>
 							<pre>
@@ -195,6 +254,11 @@ add (5, 6, 7)
 								document.write(18)
 							</script>
 						</div>
+					</div>
+
+					<div class="row">
+						<p>note: using the arrays as parameter. But I donot know why I cannot output in "script", professor you can check the code. </p>
+						<p>it works in Nodejs, it doesnot work in srcipt.</p>
 					</div>
 				</div>
 			</div>
