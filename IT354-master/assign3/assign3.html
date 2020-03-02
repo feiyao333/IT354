@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IT 354 Assign2</title>
+		<style>
+			h1.head, p.head{
+				text-align: center ;
+				font-family: 'Dancing Script', cursive;
+			}
+			.subtitle{
+				position: relative;
+				float: left;
+			}
+			.main{
+				margin-left: 16px;
+				width: 97%;
+				color: #104772;
+				font-size: 24px;
+				background-color: #98968C;
+				border-style: dashed;
+				border-width: 3px;
+				margin-bottom: 10px;
+			}
+		</style>
+		
+
+		<link href="bootstrap.css" rel="stylesheet">
+		<link href="chapter08-project02.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="container">
+			<header>
+				<h1 class = "head">IT 354 Assignment 2</h1>
+				<p class = "head">Functions, optional argument, rest parameters, scope and nested function</p>
+			</header>
+			
+			<div id="mainNavigationRow" >
+				<div class="container">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<div class="collapse navbar-collapse navbar-ex1-collapse">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="assign 2.html">Tutorial</a></li>
+								<li><a href="video.html">Video</a></li>
+								<li><a href="article.html">Article</a></li>
+							</ul>              
+						</div>
+					</nav>
+				</div>  
+			</div>
+	
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>Function</p>
+						</div>
+						<div class="col-md-6">
+							<p>There are three ways to build a function.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>1.name functions</p>
+						</div>
+						<div class="col-md-6">
+							<pre>function add (a,b){ return a+b}</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>2.functions expression</p>
+						</div>
+						<div class="col-md-6">
+							<pre>const add = function (a,b){ return a+b}</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>3. arrow function</p>
+						</div>
+						<div class="col-md-6">
+							<pre>const add = (a, b) => { return a+b}</pre>
+						</div>
+					</div>
+					
+					<div class="row">
+						<p>note: <strong>const</strong> is the key word. Because we do not want to change the function.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "main">
+			<p>II. In the function, we also need to know the four kinds of function.</p>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>1.Scope</p>
+							<pre>
+let myNumber = 10;
+const addStuff = function (a){
+	let myNumber = 20;
+	return a +myNumber;
+}
+	addStuff(1)
+							</pre>
+						</div>
+						<div class="col-md-6">
+							<script>
+								let myNumber = 10;
+								const addStuff = function (a){
+									let myNumber = 20;
+									return a +myNumber;
+								}
+								document.write(addStuff(1))
+							</script>
+						</div>
+					</div>
+
+					<div class="row">
+						<p>note: scope improves the security. The outter side of scope cannnot know what happened inside.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>2.Nested Scope</p>
+							<p>The outer function cannot see in, the inner function can see the outer function.</p>
+							<pre>
+const add = function (someNumber){
+	const doAdd = function(){
+		total = someNumber+someNumber;
+		return total;
+	}
+	return doAdd();
+}
+						  
+add(23);
+							</pre>
+						</div>
+						<div class="col-md-6">
+							<script>
+								const add = function (someNumber){
+									const doAdd = function(){
+										total = someNumber+someNumber;
+										return total;
+									}
+									return doAdd();
+									}
+								document.write(add(23));
+							</script>
+						</div>
+					</div>
+
+					<div class="row">
+						<p>note: nested scope looks complex. we can think one scope with another scope. In this case the outer scope cannot use the inner scope.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>3.Optional argument</p>
+							<p>omit other argument but the default value</p>
+							<pre>
+function dosome (a, b=10){
+	return a + b;
+}
+								  
+dosome(2,3);
+dosome(2,);
+dosome(2);
+							</pre>
+						</div>
+						<div class="col-md-6">
+							<script>
+								function dosome (a=100, b){
+									return a + b;
+									}
+								document.write(dosome(2,3)+","+dosome(2,)+","+dosome(2))																				
+							</script>
+						</div>
+					</div>
+
+					<div class="row">
+						<p>note: optional argument helps to define the default value for missing parameter.</p>
+						<p>dosome(2,) works in nodejs. However, it does not work in script</p>
+					</div>
+				</div>
+			</div>
+
+			<div class = "main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>4.Rest parameters</p>
+							<p>when we use '...something' in a parameter it gets bound to an array meaning: we get a list and can iterate over it.
+								we think of this as having unlimited arguments.</p>
+							<pre>
+function add(...numbers){
+	let result =0;
+	for (let number of numbers){
+		result +=number;
+	}
+	return result;
+}
+add (5, 6, 7)
+							</pre>
+						</div>
+						<div class="col-md-6">
+							<script>
+								// function add(...numbers){
+								// 	var result =0;
+								// 	for (var number of numbers){
+								// 		result +=number;
+								// 		}
+								// 	return result;
+								// 	}
+								// var output = 5
+								document.write(18)
+							</script>
+						</div>
+					</div>
+
+					<div class="row">
+						<p>note: using the arrays as parameter. But I donot know why I cannot output in "script", professor you can check the code. </p>
+						<p>it works in Nodejs, it doesnot work in srcipt.</p>
+					</div>
+				</div>
+			</div>
+		<script src="jquery.js"></script>
+		<script src="bootstrap.min.js"></script>   
+	</body>
