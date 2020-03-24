@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IT 354 Assign4</title>
+		<style>
+			body{
+				width: 90%;
+				margin-left: 5%;
+				margin-right: 5%;
+				background:url(back.jpg);
+				background-size:100%;
+				background-repeat:no-repeat;
+				background-attachment: fixed;
+			}
+			h1.head, p.head{
+				text-align: center ;
+				font-family: 'Dancing Script', cursive;
+			}
+			
+			p.head{
+				font-size: 22px;
+				
+			}
+			
+			.subtitle{
+				position: relative;
+				float: left;
+			}
+			.main{
+				margin-left: 0%;
+				width: auto;
+				color: #104772;
+				font-size: 24px;
+				border-style: dashed;
+				border-width: 1px;
+				margin-bottom: 10px;
+				background-color: #f1f8ff;
+				border-color: #c8e1ff;
+				padding-top: 2%;
+			}
+			
+			#title{
+				width: 100%;
+				height: 20%;
+				margin-bottom: 7px;
+				filter: drop-shadow(2px 4px 6px black);
+			}
+			
+			#Tutorial,#Video,#Article {
+				display: none;
+			}
+ 
+			#Tutorial:target,#Video:target,#Article:target {
+				display: block;
+			}
+	
+			#key{
+				color: darkred
+			}
+		
+			.note{
+				font-size: 17px;
+				text-align: center ;
+				font-family: 'Dancing Script', cursive;
+				
+			}
+			
+
+		</style>
+		
+
+		<link href="bootstrap.css" rel="stylesheet">
+		<link href="chapter08-project02.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="container">
+			<header>
+				<h1 class = "head">IT 354 Assignment 4</h1>
+				<p class = "head">Object Advance
+				</p>
+			</header>
+			
+			<div id="mainNavigationRow" >
+				<div class="container">
+					<img src="title.jpg" id="title">
+				</div>
+				<div class="container">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<div class="collapse navbar-collapse navbar-ex1-collapse">
+							<ul class="nav navbar-nav" id="switch">
+								<li class="active"><a href="#Tutorial">Tutorial</a></li>
+								<li><a href="#Video">Video</a></li>
+								<li><a href="#Article">Article</a></li>
+							</ul>              
+						</div>
+					</nav>
+				</div>  
+			</div>
+			
+			<div class = "container">
+	
+				<div class = "main" id ="Tutorial">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<h2>Prototypal inheritance</h2>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<p>1. prototypal inheritance chain: attribute</p>
+								<pre>var a = {a: 1};
+var b = Object.create(a); 
+									
+console.log(a.a); // print 1 
+console.log(b.a); // print 1
+b.a=5;
+console.log(a.a); // print 1
+console.log(b.a); // print 5
+delete b.a;
+console.log(a.a); // print 1
+console.log(b.a); // print 1
+delete a.a;
+console.log(a.a); // print undefined
+console.log(b.a); // print undefined
+								</pre>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<p>2. prototypal inheritance chain: function</p>
+								<pre>let f = function () {
+	this.a = 1;
+	this.b = 2;
+}
+
+var o = new f(); 
+									
+console.log(o); 
+console.log(o.a); 
+console.log(o.b); 
+
+console.log(o.prototype);
+o.prototype.a = 2;
+console.log(o.prototype);
+o.prototype.a = 3;
+console.log(o.prototype);
+								</pre>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-md-12">
+								<p>3. prototypal inheritance chain: this</p>
+								<pre>var obj = {
+	a = 1;
+	b: function (){
+		return this.a + 1;
+	}
+}
+
+console.log(f.b()); 
+
+var o = Object.create(obj);
+o.a = 2;
+console.log(o.b());
+								</pre>
+								<p>when inherited function is executed, 'this' refers to the object inheriting whatever it is - not to the origina!!</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<p>4. prototypal inheritance chain: class</p>
+								<pre>function Animal(){
+	this.eat=function(){
+		alert('eat')
+	}
+}
+
+function Bird(){
+	this.bark=function(){
+		alert('bark')
+	}
+}
+
+Bird.prototype = new Animal()
+
+var a = new Bird()
+a.bark()
+a.eat()
+								</pre>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<p>5. this: window object</p>
+								<pre>
+console.log(this === window ) //true in browser
+console.log( this === window) //false in node
+								</pre>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<p>6. this: Global object</p>
+								<pre>
+global.myValue = 1000
+function globalThis(){ return this.myValue}
+console.log(globalThis())
+								</pre>
+								<p>global can only used in nodejs</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				
+				<div class = "main" id ="Video">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<p>Video</p>
+							</div>
+						</div>
+						
+						<div class="jumbotron">
+							<div class="container">
+								<video controls>
+									<source src="video1.mp4" type="video/mp4">
+								</video>
+								<video controls>
+									<source src="video2.mp4" type="video/mp4">
+								</video>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class = "main" id ="Article">
+					<div class="container">
+						<div class="row">
+							<p>Microservices</p>
+						</div>
+						<div class="row">
+							<pre>There are two kinds of framework this time. The traditional one is called as Monolith and the new one is called as microservices. Comparing the two framework can help us to choose the appropriate one to save time. From my perspective, the traditional one is like the old way to build a app or system. We think whole project and prepare everything for it, which can help us to know every part in this project and keep the security. However, with the development of technology, assembly line appears in the history, which can improve the effeicient. So far, there are a lot of companies focus on build the ecosystem or evirnonment instead of the app. For instance, amazon support aws to share different service to help development focus on developing the software. And with the growing customers of ecosystem, the price will be reduced. In this case, we can find that the microservice is very flexiable and save time. On the other hand, we cannot take the responsive for the data when the customer use so that the limitation of the microservice exists. In addition, the interface with other microservice may be another question you should think about it 
+								All in all, the mircoservice reduce the requirement to build app or system. However, you should pay for other stuffs. The mircoservice still is a good way to help small groups without enough equipments to acheive their goal. </pre>
+						</div>
+						<div class="row">
+							<p>Reference</p>
+							<pre>https://www.n-ix.com/microservices-vs-monolith-which-architecture-best-choice-your-business/
+
+https://www.mulesoft.com/resources/api/microservices-vs-monolithic
+								
+https://dev.to/alex_barashkov/microservices-vs-monolith-architecture-4l1m
+								
+https://dzone.com/articles/microservices-1-introduction-monolithic-vs-microse</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		<script src="jquery.js"></script>
+		<script src="bootstrap.min.js"></script>   
+	</body>
