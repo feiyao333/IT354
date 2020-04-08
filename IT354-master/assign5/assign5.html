@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IT 354 Assign5</title>
+		<style>
+			body{
+				width: 90%;
+				margin-left: 5%;
+				margin-right: 5%;
+				background:url(back.jpg);
+				background-size:100%;
+				background-repeat:no-repeat;
+				background-attachment: fixed;
+			}
+			h1.head, p.head{
+				text-align: center ;
+				font-family: 'Dancing Script', cursive;
+			}
+			
+			p.head{
+				font-size: 22px;
+				
+			}
+			
+			.subtitle{
+				position: relative;
+				float: left;
+			}
+			.main{
+				margin-left: 0%;
+				width: auto;
+				color: #104772;
+				font-size: 24px;
+				border-style: dashed;
+				border-width: 1px;
+				margin-bottom: 10px;
+				background-color: #f1f8ff;
+				border-color: #c8e1ff;
+				padding-top: 2%;
+			}
+			
+			#title{
+				width: 100%;
+				height: 20%;
+				margin-bottom: 7px;
+				filter: drop-shadow(2px 4px 6px black);
+			}
+			
+			#Tutorial,#Video,#Article {
+				display: none;
+			}
+ 
+			#Tutorial:target,#Video:target,#Article:target {
+				display: block;
+			}
+	
+			#key{
+				color: darkred
+			}
+		
+			.note{
+				font-size: 17px;
+				text-align: center ;
+				font-family: 'Dancing Script', cursive;
+				
+			}
+
+		</style>
+		
+
+		<link href="bootstrap.css" rel="stylesheet">
+		<link href="chapter08-project02.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="container">
+			<header>
+				<h1 class = "head">IT 354 Assignment 5</h1>
+				<p class = "head">Modules</p>
+			</header>
+			
+			<div id="mainNavigationRow" >
+				<div class="container">
+					<img src="title.jpg" id="title">
+				</div>
+				<div class="container">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<div class="collapse navbar-collapse navbar-ex1-collapse">
+							<ul class="nav navbar-nav" id="switch">
+								<li class="active"><a href="#Tutorial">Tutorial</a></li>
+								<li><a href="#Video">Video</a></li>
+								<li><a href="#Article">Article</a></li>
+								<li><a href="../index.html">Index</a></li>
+							</ul>              
+						</div>
+					</nav>
+				</div>  
+			</div>
+			
+			<div class = "container">
+	
+				<div class = "main" id ="Tutorial">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<h2>1.Modules</h2>
+								<p>This is a design model to make the code clearly.</p>
+								<p>In this Tutorial page, all the output is the output of the javascript running in the browser.</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<p>	1.1 Why they are important?</p>
+								<p>to make the code more maintainablility, namespacing, reusability.</p>								
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<p>	1.2 Screenshots/code</p>
+								<pre>const add = require('./tool.js')
+
+console.log(add(1,2))
+								</pre>
+								<pre>function add(a,b){
+return a+b;
+}
+								
+module.exports = add</pre>
+								<img src="1.png">
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<br>
+								<h2>2.Higher order Functions</h2>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<p>2.1 Explain how they work</p>
+								<p>Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions. </p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>2.2 Why they are important</p>
+								<p>They can make the code cleaner.</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>2.2 Show original code/screenshots</p>
+								<pre>
+									let color = ['red', 'orange', 'yellow']
+									color.forEach(say)
+									function say(color){
+										document.write("The color is "+ color + " is a great color. <br>")
+									}	
+								</pre>
+								<p>The output will be</p>
+								<script>			
+									let color = ['red', 'orange', 'yellow']
+									color.forEach(say)
+									function say(color){
+										document.write("The color is "+ color + " is a great color. <br>")
+									}
+								</script>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>2.2 Show original code/screenshots</p>
+								<pre>
+									function methodMulti(a){
+										return function(b){
+											return a*b;
+										}
+									}
+
+									let doubleMulti = methodMulti(2);
+									let tripleMulti = methodMulti(3);
+
+									document.write("output is "+ doubleMulti(5));
+								</pre>
+								<p>The output will be</p>
+								<script>			
+									function methodMulti(a){
+										return function(b){
+											return a*b;
+										}
+									}
+
+									let doubleMulti = methodMulti(2);
+									let tripleMulti = methodMulti(3);
+
+									document.write("output is "+ doubleMulti(5));
+								</script>
+							</div>
+						</div>
+
+						
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<br>
+								<h2>3.Advanced Array Methods</h2>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<p>3.1 Explain how they work</p>
+								<p>They use array as the function in the higher order function to get another</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>3.2 Why they are important</p>
+								<p>They can make the code cleaner and easier.</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>3.3.1 forEach</p>
+								<p>do something like loop the array</p>
+								<pre>
+									let color = ['red', 'orange', 'yellow']
+									color.forEach(say)
+									function say(color){
+										document.write("The color is "+ color + " is a great color. <br>")
+									}	
+								</pre>
+								<p>The output will be</p>
+								<p>
+								<script>			
+									color.forEach(say)
+								</script></p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>3.3.2 filter</p>
+								<p>give some condition to filter the array</p>
+								<pre>
+									let grade = [98, 92, 0, 89, 55]
+									const pass = grade.filter(grade => grade >= 60);
+									document.write(pass)
+								</pre>
+								<p>The output will be</p>
+								<script>										
+									let grade = [98, 92, 0, 89, 55]
+									const pass = grade.filter(grade => grade >= 60);
+									document.write(pass)
+								</script>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<p>3.3.3 map</p>
+								<p>do something like sql to process the attribute of each object in array</p>
+								<pre>
+let student = [{name:"aa", last: "AA"}, {name:"bb", last: "BB"}, {name:"cc", last: "CC"}, {name:"dd", last: "DD"}, {name:"ee", last: "EE"}]
+const name = student.map(function(student){
+	return `${student.name}${student.last}`
+});
+document.write(name)
+								</pre>
+								<p>The output will be</p>
+								<script>										
+									let student = [{name:"aa", last: "AA"}, {name:"bb", last: "BB"}, {name:"cc", last: "CC"}, {name:"dd", last: "DD"}, {name:"ee", last: "EE"}]
+									const name = student.map(function(student){
+										return `${student.name}${student.last}`
+									});
+									document.write(name)
+								</script>
+							</div>
+						</div>
+
+						
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>3.3.4 sort</p>
+								<p>do something to sort the array.</p>
+								<pre>
+									let grade = [98, 92, 0, 89, 55]
+									const pass = grade.sort();
+									document.write(pass)
+								</pre>
+								<p>The output will be</p>
+								<script>										
+									const sort1 = grade.sort();
+									document.write(sort1)
+								</script>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>3.3.5 find</p>
+								<p>do somthing to find the specific element in array</p>
+								<pre>
+									var output = [1, 2, 5, -1, 9].find((n) => n < 0)
+									document.write(output)
+								</pre>
+								<p>The output will be</p>
+								<script>var output = [1, 2, 5, -1, 9].find((n) => n < 0)
+									document.write(output)
+									</script>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<p>3.3.6 findIndex</p>
+								<p>do somthing to find the index of the specific element in array</p>
+								<pre>
+output = [1, 2, 5, -1, 9].findIndex((n) => n < 0)
+document.write(output)
+								</pre>
+								<p>The output will be</p>
+								<script>									
+									output = [1, 2, 5, -1, 9].findIndex((n) => n < 0)
+									document.write(output)
+									</script>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>3.3.7 push</p>
+								<p>to add some element in the end of the array</p>
+								<pre>
+									var arr = [1, 2];
+									arr.push(3,4);
+									document.write(arr);
+								</pre>
+								<p>The output will be</p>
+								<script>									
+									var arr = [1, 2];
+									arr.push(3,4);
+									document.write(arr);
+									</script>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<br>
+								<p>3.3.8 unshift</p>
+								<p>to add some element in the start of the array</p>
+								<pre>
+									var arr = [1, 2];
+									arr.unshift(3,4);
+									document.write(arr);
+								</pre>
+								<p>The output will be</p>
+								<script>									
+									arr = [1, 2];
+									arr.unshift(3,4);
+									document.write(arr);
+									</script>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<p>3.3.9 pop() and shift()</p>
+								<p>to remove some element in the last one or the first one of the array</p>
+								<pre>
+var arr = [1, 2, 3, 4];
+arr.pop();
+document.write(arr);
+document.write("<br>");
+arr.shift();
+document.write(arr);
+								</pre>
+								<p>The output will be</p>
+								<script>									
+									arr = [1, 2, 3, 4];
+									arr.pop();
+									document.write(arr);
+									document.write("<br>");
+									arr.shift();
+									document.write(arr);
+									</script>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+				<div class = "main" id ="Video">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<p>Video</p>
+							</div>
+						</div>
+						
+						<div class="jumbotron">
+							<div class="container">
+								<video controls>
+									<source src="video1.mp4" type="video/mp4">
+								</video>
+								<video controls>
+									<source src="video2.mp4" type="video/mp4">
+								</video>
+								<video controls>
+									<source src="video3.mp4" type="video/mp4">
+								</video>
+								<video controls>
+									<source src="video4.mp4" type="video/mp4">
+								</video>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class = "main" id ="Article">
+					<div class="container">
+						<div class="row">
+							<p>short article</p>
+						</div>
+						<div class="row">
+							<pre>The problem here is the font problem. 
+
+There is a big difference between When the page finishes loading and before that. 
+
+The reason is that by combining two web fonts together in a single headline, the FOIT has created a race condition that alters the integrity of the content. 
+
+I think it will effect a lot. without one word "Not" or other key word leads to a big trouble and misunderstanding. In the article, his words may have cost him the 2012 US Presidential Election. 
+
+The first impressions for the user will feel bad like having been playing with. In the article, he give the code in the appendix1 to load. 
+
+In addition, he also give some advice to use the browser to solve the problem.</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		<script src="jquery.js"></script>
+		<script src="bootstrap.min.js"></script>   
+	</body>
