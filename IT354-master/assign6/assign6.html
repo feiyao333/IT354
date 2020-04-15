@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IT 354 Assign5</title>
+		<style>
+			body{
+				width: 90%;
+				margin-left: 5%;
+				margin-right: 5%;
+				background:url(back.jpg);
+				background-size:100%;
+				background-repeat:no-repeat;
+				background-attachment: fixed;
+			}
+			h1.head, p.head{
+				text-align: center ;
+				font-family: 'Dancing Script', cursive;
+			}
+			
+			p.head{
+				font-size: 22px;
+				
+			}
+			
+			.subtitle{
+				position: relative;
+				float: left;
+			}
+			.main{
+				margin-left: 0%;
+				width: auto;
+				color: #104772;
+				font-size: 24px;
+				border-style: dashed;
+				border-width: 1px;
+				margin-bottom: 10px;
+				background-color: #f1f8ff;
+				border-color: #c8e1ff;
+				padding-top: 2%;
+			}
+			
+			#title{
+				width: 100%;
+				height: 20%;
+				margin-bottom: 7px;
+				filter: drop-shadow(2px 4px 6px black);
+			}
+			
+			#Tutorial,#Video,#Article {
+				display: none;
+			}
+ 
+			#Tutorial:target,#Video:target,#Article:target {
+				display: block;
+			}
+	
+			#key{
+				color: darkred
+			}
+		
+			.note{
+				font-size: 17px;
+				text-align: center ;
+				font-family: 'Dancing Script', cursive;
+				
+			}
+
+			h2{
+				color:crimson;
+			}
+
+		</style>
+		
+
+		<link href="bootstrap.css" rel="stylesheet">
+		<link href="chapter08-project02.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="container">
+			<header>
+				<h1 class = "head">IT 354 Assignment 5</h1>
+				<p class = "head">Modules</p>
+			</header>
+			
+			<div id="mainNavigationRow" >
+				<div class="container">
+					<img src="title.jpg" id="title">
+				</div>
+				<div class="container">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<div class="collapse navbar-collapse navbar-ex1-collapse">
+							<ul class="nav navbar-nav" id="switch">
+								<li class="active"><a href="#Tutorial">Tutorial</a></li>
+								<li><a href="#Video">Video</a></li>
+								<li><a href="#Article">Article</a></li>
+								<li><a href="../index.html">Index</a></li>
+							</ul>              
+						</div>
+					</nav>
+				</div>  
+			</div>
+			
+			<div class = "container">
+	
+				<div class = "main" id ="Tutorial">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h2>1.API</h2>
+								<p>Application Programming Interface</p>
+								<p>From my perspective, the api like the translation between two world using different words. The api make sure they can communicate with each other without misunderstanding.</p>
+								<p>It is only about data.</p>
+								<p>It is a special form agreed upon by both sides.</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<h2>2. REST</h2>
+								<p>REpresentational State Transfer</p>
+								<p>From my perspective, the rest is one kind of style to write api.</p>
+								<p>It is architectural style for distributed hypermedia systems.</p>
+								<p>Compared with soap, rest is sending data without strict standards.</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<h2>	3. What is Postman and why use it?</h2>
+								<p>Postman is like your browser but on steroids it allows you to build really complex requests.</p>
+								<p>Because it is easy to develop and test api.</p>
+								<p>Postman is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<h2>	4.1 personally written code</h2>
+
+								<p>coding screenshot</p>
+								<h4>get</h4>
+								<img src="get.png">
+								<h4>post</h4>
+								<img src="post.png">
+								<h4>put and delete</h4>
+								<img src="put and delete.png">
+
+								<h2>Output</h2>
+								<p>get output</p>
+								<img src="get output.png">
+								<p>post output</p>
+								<img src="post out.png">
+								<p>put output</p>
+								<img src="put out.png">
+								<p>delete output</p>
+								<img src="delete output.png">
+								<img src="result.png">
+								<p>From the code, we know api can do crud simialr as the query in sql.</p>
+								<p>This api assuming a person table. There are only two elements, one is id, and the other is name.</p>
+								<p>These screenshot helps us to know how the api works and what they can do.</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+
+
+
+				<div class = "main" id ="Video">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<p>Video</p>
+							</div>
+						</div>
+						
+						<div class="jumbotron">
+							<div class="container">
+								<h2>1. preparation</h2>
+								<video controls>
+									<source src="1.mp4" type="video/mp4">
+								</video>
+								<h2>2. get method</h2>
+								<video controls>
+									<source src="2.mp4" type="video/mp4">
+								</video>
+								<h2>3. post method</h2>
+								<video controls>
+									<source src="3.mp4" type="video/mp4">
+								</video>
+								<h2>4. put method and delete method</h2>
+								<video controls>
+									<source src="4.mp4" type="video/mp4">
+								</video>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class = "main" id ="Article">
+					<div class="container">
+
+						<div class="row">
+							<h2>1.What is Node</h2>
+							<p>Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project.</p>
+						</div>
+
+						<div class="row">
+							<h2>2.What is this V8 Engine
+							</h2>
+							<p>V8 is the name of the JavaScript engine that powers Google Chrome. It's the thing that takes our JavaScript and executes it while browsing with Chrome.</p>
+						</div>
+
+						<div class="row">
+							<h2>3.The history of this engine
+							</h2>
+							<p>In 2015, project TurboFan has been added to enable more speed.</p>
+							<p>In 2016, the Ignition interpreter was added to V8 with the design goal of reducing the memory usage on small memory Android phones in comparison with TurboFan and Crankshaft.</p>
+							<p>In 2017, V8 shipped a brand-new compiler pipeline, consisting of Ignition (the interpreter) and TurboFan (the optimizing compiler). </p>
+						</div>
+
+						<div class="row">
+							<h2>4.How Node utilizes it
+							</h2>
+							<p>Node.js in itself is a C++ implementation of a V8 engine allowing server-side programming and networking applications. </p>
+							<p>V8 is the Javascript engine inside of node. js which helps nodejs translates javascript into machine code.</p>
+						</div>
+
+						<div class="row">
+							<h2>5.Some personal interesting finds about it
+							</h2>
+							<p>When first executing the JavaScript code, V8 leverages full-codegen which directly translates the parsed JavaScript into machine code without any transformation. This allows it to start executing machine code very fast. </p>
+							<p>With the release of V8 5.9 earlier in 2017, a new execution pipeline was introduced, which paves the way for further optimizations that will boost JavaScript performance and shrink V8’s footprint in both Chrome and Node.js in the coming years.</p>
+						</div>
+
+						<div class="row">
+							<h2>Reference
+							</h2>
+							<p><a href="https://nodejs.dev/the-v8-javascript-engine">The V8 JavaScript Engine</a></p>
+							<p><a href="https://developers.google.com/apps-script/guides/v8-runtime">V8 Runtime Overview
+							</a></p>
+							<p><a href="https://www.freecodecamp.org/news/understanding-the-core-of-nodejs-the-powerful-chrome-v8-engine-79e7eb8af964/">Understanding How the Chrome V8 Engine Translates JavaScript into Machine Code</a></p>
+							<p><a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e">How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></p>
+							<p><a href="https://en.wikipedia.org/wiki/V8_(JavaScript_engine)">V8 WIki</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		<script src="jquery.js"></script>
+		<script src="bootstrap.min.js"></script>   
+	</body>
